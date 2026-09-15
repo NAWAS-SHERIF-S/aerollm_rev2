@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg-dark: #070b19;
+  --bg-surface: #0b122c;
+  
+  --primary-blue: #2563eb;
+  --primary-cyan: #38bdf8;
+  --accent-cyan: #06b6d4;
+
+  --text-main: #ffffff;
+  --text-sub: #e2e8f0;
+  --text-muted: #94a3b8;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ==================================================== */
+/* 1. GLOBAL BACKGROUND (Aviation Aircraft Atmosphere)  */
+/* ==================================================== */
+
+/* Ambient Grid & Deep Glow Layer */
+.app-bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.28) 0%, transparent 50%),
+    radial-gradient(circle at 80% 60%, rgba(6, 182, 212, 0.22) 0%, transparent 55%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+  pointer-events: none;
+  z-index: -3;
+}
+
+/* FIXED FULL-PAGE AIRCRAFT BACKGROUND VISIBLE ACROSS ALL PAGES */
+.global-aircraft-viewport-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  overflow: hidden;
+}
+
+/* The AeroLLM Airliner Visual Layer */
+.global-aircraft-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70vw;
+  height: 100vh;
+  background-image: url('/hero_aircraft.jpg');
+  background-size: cover;
+  background-position: center right;
+  opacity: 0.65;
+  filter: contrast(1.15) brightness(1.1);
+  mask-image: radial-gradient(circle at 70% 45%, black 40%, transparent 90%);
+  -webkit-mask-image: radial-gradient(circle at 70% 45%, black 40%, transparent 90%);
+  transition: opacity 0.5s ease;
+}
+
+/* Dark Transparent Gradient Overlay to ensure 100% Text Readability */
+.global-aircraft-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(to right, rgba(7, 11, 25, 0.95) 0%, rgba(7, 11, 25, 0.75) 45%, rgba(7, 11, 25, 0.25) 100%),
+    linear-gradient(to top, rgba(7, 11, 25, 0.95) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ==================================================== */
+/* 2. LIQUID GLASS BUTTONS & INTERACTIVE ELEMENTS       */
+/* ==================================================== */
+
+/* Primary Liquid Glass CTA Pill */
+.btn-liquid-primary,
+.btn-primary-pill {
+  position: relative;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.55) 0%, rgba(37, 99, 235, 0.65) 50%, rgba(6, 182, 212, 0.55) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 
+    inset 0 2px 5px rgba(255, 255, 255, 0.8),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.4),
+    0 8px 30px rgba(37, 99, 235, 0.5),
+    0 0 25px rgba(56, 189, 248, 0.45);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
+}
+
+.btn-liquid-primary::before,
+.btn-primary-pill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-liquid-primary:hover::before,
+.btn-primary-pill:hover::before {
+  left: 100%;
+}
+
+.btn-liquid-primary:hover,
+.btn-primary-pill:hover {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.8) 0%, rgba(37, 99, 235, 0.85) 50%, rgba(6, 182, 212, 0.8) 100%);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    inset 0 2px 8px rgba(255, 255, 255, 1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+    0 14px 40px rgba(56, 189, 248, 0.7),
+    0 0 35px rgba(56, 189, 248, 0.7);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Secondary Liquid Glass Button */
+.btn-liquid-secondary,
+.btn-secondary-glass {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    0 6px 24px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
+}
+
+.btn-liquid-secondary:hover,
+.btn-secondary-glass:hover {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.25) 0%, rgba(255, 255, 255, 0.2) 100%);
+  border-color: rgba(56, 189, 248, 0.7);
+  color: #38bdf8 !important;
+  box-shadow: 
+    inset 0 2px 6px rgba(255, 255, 255, 0.7),
+    0 10px 32px rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Liquid Glass Chip & Filter Tab Button */
+.btn-liquid-chip {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  color: #f1f5f9;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-liquid-chip:hover {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.3) 0%, rgba(37, 99, 235, 0.25) 100%);
+  border-color: rgba(56, 189, 248, 0.65);
+  color: #38bdf8;
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.6), 0 6px 20px rgba(56, 189, 248, 0.35);
+}
+
+/* Liquid Glass Icon Button (Search, Refresh, Close) */
+.btn-liquid-icon {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.4), 0 6px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 9999px;
+  color: #e2e8f0;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-liquid-icon:hover {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.35) 0%, rgba(37, 99, 235, 0.3) 100%);
+  border-color: rgba(56, 189, 248, 0.7);
+  color: #38bdf8;
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.7), 0 8px 24px rgba(56, 189, 248, 0.4);
+}
+
+/* ==================================================== */
+/* 3. LIQUID GLASS CARDS & PANELS                       */
+/* ==================================================== */
+
+.glass-panel,
+.glass-card-liquid {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 25px rgba(56, 189, 248, 0.12);
+  border-radius: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-interactive:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5), 0 24px 60px rgba(56, 189, 248, 0.25), 0 0 30px rgba(56, 189, 248, 0.25);
+  transform: translateY(-3px);
+}
+
+/* HUD Glass Card with Glossy Light Sheen */
+.glass-hud-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.04) 100%);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.6), 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 25px rgba(56, 189, 248, 0.3);
+  border-radius: 24px;
+}
+
+/* ==================================================== */
+/* 4. LIQUID NAVIGATION BAR                             */
+/* ==================================================== */
+
+.nav-link {
+  position: relative;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 1.1rem;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-link.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.45) 0%, rgba(37, 99, 235, 0.5) 100%);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.6), 0 6px 20px rgba(56, 189, 248, 0.4);
+}
+
+/* ==================================================== */
+/* 5. LIQUID INPUTS, BADGES & TABLES                    */
+/* ==================================================== */
+
+.input-liquid {
+  background: rgba(7, 11, 25, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  color: #ffffff;
+  transition: all 0.25s ease;
+}
+
+.input-liquid:focus {
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.3), 0 0 20px rgba(56, 189, 248, 0.3);
+  outline: none;
+}
+
+.badge-cyan {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.badge-green {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.5);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(12px);
+}
+
+.badge-amber {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(12px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #070b19;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.35);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.6);
+}
+
+/* Floating Animations */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Table styling */
+.custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+}
+
+.custom-table th {
+  padding: 0.75rem 1.25rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.custom-table td {
+  padding: 1rem 1.25rem;
+  background: rgba(11, 18, 44, 0.55);
+  backdrop-filter: blur(16px);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.9rem;
+}
+
+.custom-table tr td:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-left: 1.5px solid rgba(255, 255, 255, 0.12);
+}
+
+.custom-table tr td:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.12);
+}
+
+.custom-table tr:hover td {
+  background: rgba(30, 41, 59, 0.75);
+  border-color: rgba(56, 189, 248, 0.4);
+}
