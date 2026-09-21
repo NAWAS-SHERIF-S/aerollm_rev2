@@ -1,0 +1,17 @@
+# AIRCRAFT ENGINE OIL & LUBRICATION SYSTEM MAINTENANCE MANUAL
+DOCUMENT TYPE: Aircraft Maintenance Manual (AMM)
+SYSTEM: Engine Oil System (ATA 79 / ATA 72)
+
+SECTION 1: HIGH OIL TEMPERATURE AND GRADUAL OIL PRESSURE LOSS
+1. If engine oil temperature increases above normal limits while oil pressure decreases during operation:
+- Inspect engine oil reservoir fluid level and perform oil consumption rate calculation per AMM Chapter 79-00-00.
+- Check main engine oil filter element and bypass indicator pin; remove and inspect filter cartridge for metallic wear debris or contamination.
+- Verify oil pressure relief valve cracking pressure and inspect thermal bypass valve operation in the oil cooler line.
+- Test oil temperature transmitter/sensor calibration and wiring harness connector pins for signal drift or corrosion.
+- Perform oil cooler airflow duct inspection for blockage or thermostatic valve malfunction.
+- Execute engine ground run operational test to monitor oil pressure and temperature stabilization across engine power settings.
+
+SECTION 2: LUBRICATION PUMP & CHIP DETECTOR MAINTENANCE
+2. Magnetic chip detector and oil pump inspection:
+- Remove and inspect magnetic chip detector plugs for iron or alloy metal particle accumulation.
+- If magnetic particles are detected, submit chip sample for laboratory alloy analysis before engine clearance.

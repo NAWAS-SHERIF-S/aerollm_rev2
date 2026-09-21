@@ -30,36 +30,30 @@ export const apiService = {
     }
   },
 
-  // 2. Main AI Analysis API
+  // 2. Main RAG Analysis API
   analyzeMaintenanceReport: async (reportText) => {
-    try {
-      return await fetchAPI('/api/maintenance/analyze', {
-        method: 'POST',
-        body: JSON.stringify({ report: reportText }),
-      });
-    } catch (err) {
-      // Client-side fallback if backend is momentarily unreachable
-      const aircraftMatch = reportText.match(/\b(VT\d{3,4}|[A-Z]{2,3}\d{3,4})\b/i);
-      const aircraft = aircraftMatch ? aircraftMatch[1].toUpperCase() : "ABC123";
-      
-      const actions = [];
-      const upper = reportText.toUpperCase();
-      if (upper.includes("REPLACE")) actions.push("REPLACED");
-      if (upper.includes("INSPECT")) actions.push("INSPECTED");
-      if (upper.includes("REPAIR")) actions.push("REPAIRED");
-      if (upper.includes("TEST")) actions.push("TESTED");
-      if (actions.length === 0) actions.push("INSPECTED");
+    return await fetchAPI('/api/maintenance/analyze', {
+      method: 'POST',
+      body: JSON.stringify({ report: reportText }),
+    });
+  },
 
-      return {
-        success: true,
-        result: {
-          aircraft,
-          maintenance_actions: actions,
-          note: "AeroLLM AI Engine (Local Mode)"
-        },
-        record_id: Math.floor(Math.random() * 1000) + 10
-      };
-    }
+  // RAG Direct Endpoints
+  queryRAG: async (queryText) => {
+    return await fetchAPI('/api/rag/query', {
+      method: 'POST',
+      body: JSON.stringify({ query: queryText }),
+    });
+  },
+
+  getDebugRAG: async (queryText) => {
+    return await fetchAPI(`/api/rag/debug?query=${encodeURIComponent(queryText)}`);
+  },
+
+  reindexRAG: async () => {
+    return await fetchAPI('/api/rag/reindex', {
+      method: 'POST',
+    });
   },
 
   // 3. Maintenance History

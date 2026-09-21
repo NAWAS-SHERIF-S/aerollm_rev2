@@ -1,0 +1,19 @@
+# AIRCRAFT HYDRAULIC SYSTEM TROUBLESHOOTING & MAINTENANCE MANUAL
+DOCUMENT TYPE: Maintenance Manual
+SYSTEM: Hydraulic Power (ATA 29)
+
+SECTION 1: HYDRAULIC LIFT & ACTUATOR MALFUNCTION
+1. If the hydraulic lift or actuator fails to operate properly or low system pressure is indicated:
+- Check hydraulic reservoir fluid level and inspect sight glass for aeration or fluid discoloration.
+- Inspect hydraulic lines, fittings, quick disconnects, and valve connections for active fluid leakage.
+- Inspect the hydraulic lift actuator cylinder, selector valve assembly, and piston seals for mechanical wear or bypass leakage.
+- Measure primary hydraulic system pressure using a calibrated ground pressure test gauge.
+- Perform the applicable hydraulic troubleshooting procedure per AMM Chapter 29-10-00.
+- Bleed trapped air from the hydraulic system and perform a full operational ground test prior to aircraft release.
+
+SECTION 2: HYDRAULIC PUMP TROUBLESHOOTING
+2. Engine-Driven Pump (EDP) pressure fluctuations:
+- Verify system relief valve cracked pressure setting (3000 PSI nominal).
+- Check hydraulic return line filter differential pressure indicator.
+- Replace main hydraulic return filter element if pop-out indicator is tripped.
+- Perform case drain flow check on engine-driven pump to determine internal pump wear.

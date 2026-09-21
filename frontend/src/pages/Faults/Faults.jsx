@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AlertTriangle, Filter, Wrench } from 'lucide-react';
+import { AlertTriangle, Filter, Wrench, Sparkles, ChevronRight } from 'lucide-react';
 import { apiService } from '../../services/api';
 
 export default function Faults({ setActivePage }) {
@@ -27,26 +27,31 @@ export default function Faults({ setActivePage }) {
     <div className="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-8">
       
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/15 pb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-indigo-500/10 pb-6">
         <div>
-          <span className="badge-cyan mb-2 inline-block">Real-Time Hazard Intelligence</span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white font-['Outfit']">
-            Aviation Faults & Issues
+          <div className="flex items-center gap-2 mb-2">
+            <span className="badge badge-sparkle">
+              <Sparkles className="w-3.5 h-3.5 text-[#6654f5]" />
+              Real-Time Hazard Intelligence Radar
+            </span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-['Outfit']">
+            Aviation Fault Diagnostics
           </h1>
-          <p className="text-slate-300 text-sm mt-1">
+          <p className="text-slate-600 text-sm mt-1 font-medium">
             Automated fault logging and airworthiness severity tracking across fleet operations.
           </p>
         </div>
 
         {/* Aircraft Filter */}
         <div className="flex items-center gap-3">
-          <span className="text-xs text-slate-300 font-semibold flex items-center gap-1">
-            <Filter className="w-3.5 h-3.5 text-cyan-300" /> Filter Tail ID:
+          <span className="text-xs text-slate-600 font-bold flex items-center gap-1.5">
+            <Filter className="w-3.5 h-3.5 text-[#6654f5]" /> Filter Tail:
           </span>
           <select
             value={selectedAircraft}
             onChange={(e) => setSelectedAircraft(e.target.value)}
-            className="bg-[#0b122c]/80 border border-white/20 text-white text-xs rounded-xl px-3 py-2 outline-none focus:border-cyan-400 font-sans backdrop-blur-md"
+            className="input-field text-xs py-2 px-3 rounded-full border border-slate-300 font-semibold bg-white text-slate-900 shadow-sm"
           >
             <option value="">All Fleet Aircraft</option>
             <option value="VT101">VT101</option>
@@ -64,31 +69,31 @@ export default function Faults({ setActivePage }) {
           return (
             <div 
               key={item.id}
-              className="glass-panel p-6 space-y-4 relative border-cyan-500/30 hover:border-cyan-400/60 transition-all"
+              className="glass-panel p-6 space-y-4 relative bg-white/95 border border-indigo-500/15 hover:border-[#6654f5]/40 transition-all shadow-xl"
             >
-              <div className="flex items-start justify-between">
+              <div className="flex items-start justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                    isResolved ? 'bg-emerald-500/20 border border-emerald-400/40 text-emerald-300' : 'bg-amber-500/20 border border-amber-400/40 text-amber-300'
+                    isResolved ? 'bg-emerald-100 border border-emerald-300 text-emerald-700' : 'bg-amber-100 border border-amber-300 text-amber-700'
                   }`}>
                     <AlertTriangle className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="badge-cyan text-[10px] py-0 px-2 font-mono">{item.aircraft || 'VT101'}</span>
-                    <h3 className="text-base font-bold text-white font-['Outfit'] mt-1 line-clamp-1">{item.fault}</h3>
+                    <span className="badge badge-sparkle text-[10px] py-0.5 px-2 font-mono font-bold text-[#6654f5]">{item.aircraft || 'VT101'}</span>
+                    <h3 className="text-base font-bold text-slate-900 font-['Outfit'] mt-1 line-clamp-1">{item.fault}</h3>
                   </div>
                 </div>
 
-                <span className={isResolved ? 'badge-green' : 'badge-amber'}>
+                <span className={isResolved ? 'badge-glow-emerald' : 'badge-glow-amber'}>
                   {item.status}
                 </span>
               </div>
 
-              <div className="p-3 rounded-lg bg-white/10 border border-white/15 flex items-center justify-between text-xs text-slate-200 backdrop-blur-md">
-                <span className="flex items-center gap-1 font-semibold">
-                  <Wrench className="w-3.5 h-3.5 text-cyan-300" /> Action: {item.action || 'REPLACED'}
+              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs text-slate-700">
+                <span className="flex items-center gap-1.5 font-bold">
+                  <Wrench className="w-3.5 h-3.5 text-[#6654f5]" /> Action: {item.action || 'REPLACED'}
                 </span>
-                <span className="font-mono text-slate-300">{new Date(item.created_at).toLocaleDateString()}</span>
+                <span className="font-mono text-slate-500 font-semibold">{new Date(item.created_at).toLocaleDateString()}</span>
               </div>
             </div>
           );
@@ -98,3 +103,4 @@ export default function Faults({ setActivePage }) {
     </div>
   );
 }
+

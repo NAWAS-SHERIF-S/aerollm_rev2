@@ -63,7 +63,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070b19] text-white relative flex flex-col font-sans">
+    <div className="min-h-screen bg-[#f0f6fc] text-slate-900 relative flex flex-col font-sans">
       
       {/* 1. Ambient Background Grid */}
       <div className="app-bg-grid" />
@@ -82,7 +82,7 @@ export default function App() {
       />
 
       {/* 4. Main Page View Container */}
-      <main className="flex-1 relative z-10">
+      <main className="flex-1 relative z-10 pt-24 pb-12">
         {renderPage()}
       </main>
 

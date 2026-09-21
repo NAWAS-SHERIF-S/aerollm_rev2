@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrench, ShieldAlert, Cpu, GraduationCap, FileCheck, LineChart, ArrowRight } from 'lucide-react';
+import { Wrench, ShieldAlert, Cpu, GraduationCap, FileCheck, LineChart, ArrowRight, Sparkles } from 'lucide-react';
 import { USE_CASES } from '../../data/mockData';
 
 const ICON_MAP = {
@@ -17,11 +17,14 @@ export default function UseCases({ setActivePage }) {
       
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <span className="badge-cyan">Industry Solutions</span>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-white font-['Outfit']">
+        <span className="badge badge-sparkle">
+          <Sparkles className="w-3.5 h-3.5 text-[#6654f5]" />
+          Industry Solutions
+        </span>
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 font-['Outfit']">
           Aviation Use Cases
         </h1>
-        <p className="text-slate-300 text-base sm:text-lg">
+        <p className="text-slate-600 text-base sm:text-lg font-medium">
           From line maintenance ramps to regulatory compliance audits, AeroLLM transforms aviation technical workflows.
         </p>
       </div>
@@ -31,30 +34,30 @@ export default function UseCases({ setActivePage }) {
         {USE_CASES.map((uc, idx) => {
           const IconComp = ICON_MAP[uc.icon] || Wrench;
           return (
-            <div key={idx} className="glass-panel p-8 flex flex-col justify-between relative group hover:border-cyan-400/50 transition-all">
+            <div key={idx} className="glass-panel p-8 flex flex-col justify-between relative group hover:border-[#6654f5]/40 transition-all bg-white/95 border border-indigo-500/15 shadow-xl">
               
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/20 border border-cyan-400/40 flex items-center justify-center text-cyan-300">
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-[#6654f5]">
                     <IconComp className="w-6 h-6" />
                   </div>
-                  <span className="text-xs font-mono text-slate-400">UC-0{idx + 1}</span>
+                  <span className="text-xs font-mono text-slate-400 font-bold">UC-0{idx + 1}</span>
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-bold text-white font-['Outfit']">{uc.title}</h3>
-                  <p className="text-xs font-semibold text-cyan-300 mt-0.5">{uc.tagline}</p>
+                  <h3 className="text-2xl font-bold text-slate-900 font-['Outfit']">{uc.title}</h3>
+                  <p className="text-xs font-bold text-[#6654f5] mt-0.5">{uc.tagline}</p>
                 </div>
 
-                <p className="text-sm text-slate-200 leading-relaxed">{uc.desc}</p>
+                <p className="text-sm text-slate-600 leading-relaxed font-medium">{uc.desc}</p>
 
                 {/* Workflow steps */}
-                <div className="pt-3 border-t border-white/10">
-                  <p className="text-[11px] font-bold text-slate-300 uppercase tracking-wider mb-2">Example Workflow</p>
-                  <div className="space-y-1.5 text-xs text-slate-200">
+                <div className="pt-3 border-t border-slate-100">
+                  <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Example Workflow</p>
+                  <div className="space-y-1.5 text-xs text-slate-700 font-medium">
                     {uc.workflow.map((wf, wIdx) => (
                       <div key={wIdx} className="flex items-center gap-2">
-                        <span className="w-4 h-4 rounded-full bg-cyan-500/30 text-cyan-300 flex items-center justify-center text-[10px] font-bold shrink-0">
+                        <span className="w-4 h-4 rounded-full bg-indigo-100 text-[#6654f5] flex items-center justify-center text-[10px] font-bold shrink-0">
                           {wIdx + 1}
                         </span>
                         <span>{wf}</span>
@@ -67,7 +70,7 @@ export default function UseCases({ setActivePage }) {
               <div className="pt-6">
                 <button
                   onClick={() => setActivePage('try')}
-                  className="w-full btn-liquid-secondary justify-center text-sm py-2.5"
+                  className="w-full btn-liquid-secondary justify-center text-sm py-2.5 font-bold"
                 >
                   <span>Launch Use Case</span>
                   <ArrowRight className="w-4 h-4" />
@@ -82,3 +85,4 @@ export default function UseCases({ setActivePage }) {
     </div>
   );
 }
+

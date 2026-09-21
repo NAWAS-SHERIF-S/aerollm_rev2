@@ -1,0 +1,17 @@
+# AIRCRAFT LANDING GEAR SYSTEM TROUBLESHOOTING & MAINTENANCE MANUAL
+DOCUMENT TYPE: Aircraft Maintenance Manual (AMM)
+SYSTEM: Landing Gear System (ATA 32)
+
+SECTION 1: LANDING GEAR RETRACTION & INDICATION FAULTS
+1. If the main landing gear indicates an unsafe condition during retraction or cycling:
+- Verify proximity sensor alignment, target clearance gaps (1.5mm - 3.0mm), and wiring harness integrity per AMM Chapter 32-60-00.
+- Inspect landing gear door actuator, mechanical uplatch mechanism, and hydraulic extension/retraction lines for physical damage or obstruction.
+- Check main landing gear selector valve operation and measure hydraulic supply pressure during gear sweep tests.
+- Perform electrical continuity and BITE diagnostic testing on proximity detector switches and cockpit gear indication lights.
+- Perform complete ground operational gear retraction test using hydraulic ground power units (GPU) and safety jack stands prior to flight release.
+
+SECTION 2: BRAKE & WHEEL ASSEMBLY INSPECTION
+2. Landing gear wheel, brake, and tire maintenance:
+- Inspect brake assembly wear indicator pins and hydraulic brake line connections for leakage or pressure loss.
+- Examine wheel rim flanges and tire tread condition for excessive wear, cut depth, or thermal degradation.
+- Check emergency extension system nitrogen bottle charge pressure and manual gear release mechanical linkages.

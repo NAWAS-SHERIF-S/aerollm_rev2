@@ -5,6 +5,7 @@ from routes.dashboard import router as dashboard_router
 from routes.faults import router as faults_router
 from routes.search import router as search_router
 from routes.reports import router as reports_router
+from routes.rag import router as rag_router
 
 __all__ = [
     "health_router",
@@ -14,4 +15,6 @@ __all__ = [
     "faults_router",
     "search_router",
     "reports_router",
+    "rag_router",
 ]
+

@@ -10,9 +10,11 @@ env/
 .env
 *.env
 
-# Database / SQLite / Cache
+# Database / SQLite / Vector DB Cache / Large Media
 *.db
 *.sqlite3
+data/chroma/
+*.pdf
 
 # Node / Frontend dependencies & builds
 node_modules/
@@ -30,3 +32,4 @@ Thumbs.db
 
 # OS / Temp files
 *.log
+

@@ -194,19 +194,110 @@ export const USE_CASES = [
 
 export const SAMPLE_REPORTS = [
   {
-    label: "Hydraulic System Fault (VT101)",
-    text: "Aircraft VT101 reported hydraulic pressure low in System A during taxi to runway 27L. Maintenance crew inspected line connections and replaced the primary engine-driven hydraulic pump."
+    id: "sample-1",
+    label: "Sample 1 — Hydraulic System Leakage",
+    shortLabel: "Hydraulic System Leakage",
+    text: "During post-flight inspection, hydraulic fluid was observed leaking from the left main landing gear actuator area. Hydraulic reservoir quantity was approximately 20% below the normal servicing level. No abnormal cockpit indications were reported during the previous flight. Maintenance inspection requested to determine the source of leakage and verify actuator and associated hydraulic line condition.",
+    aircraftModel: "A320",
+    aircraftReg: "DEMO-VT204",
+    ataChapter: "ATA 29",
+    reportType: "Post-flight Inspection",
+    expectedConcepts: [
+      "Hydraulic system",
+      "Hydraulic leakage",
+      "Landing gear actuator",
+      "Low reservoir quantity",
+      "ATA 29",
+      "Maintenance inspection"
+    ]
   },
   {
-    label: "Engine Oil Temp High (VT102)",
-    text: "Aircraft VT102 left engine (#1) oil temperature exceeded 135C on climb out. Maintenance inspected thermal relief valve and replaced oil temperature sensor unit."
+    id: "sample-2",
+    label: "Sample 2 — Landing Gear Retraction Issue",
+    shortLabel: "Landing Gear Retraction",
+    text: "During landing gear operational check, the right main landing gear indicated an unsafe condition during retraction. Gear indication remained intermittent after cycling the landing gear selector. No abnormal hydraulic pressure indication was observed. Aircraft was removed from service pending inspection of the landing gear indication and retraction system.",
+    aircraftModel: "B737",
+    aircraftReg: "DEMO-VT318",
+    ataChapter: "ATA 32",
+    reportType: "Operational BITE Check",
+    expectedConcepts: [
+      "Landing gear",
+      "Unsafe indication",
+      "Retraction system",
+      "Indication fault",
+      "ATA 32",
+      "Maintenance required"
+    ]
   },
   {
-    label: "APU Ignition Failure (VT103)",
-    text: "Aircraft VT103 APU failed to ignite during gate arrival at Denver Intl. Maintenance repaired starter motor wiring harness and tested APU auto-start sequence."
+    id: "sample-3",
+    label: "Sample 3 — Engine Oil Temperature and Pressure",
+    shortLabel: "Engine Oil Temp & Pressure",
+    text: "During cruise, engine oil temperature increased above the normal operating range while oil pressure decreased gradually. The crew observed the abnormal indication and followed the applicable aircraft operating procedure. No engine vibration or abnormal noise was reported. Maintenance inspection required to determine whether the indication is related to the oil system, sensor, or engine condition.",
+    aircraftModel: "A320",
+    aircraftReg: "DEMO-VT509",
+    ataChapter: "ATA 79",
+    reportType: "In-flight Incident",
+    expectedConcepts: [
+      "Engine oil system",
+      "Oil temperature",
+      "Oil pressure",
+      "Sensor",
+      "Engine",
+      "ATA 79"
+    ]
   },
   {
-    label: "Landing Gear Sensor Glitch (VT104)",
-    text: "Aircraft VT104 reported proximity sensor fault on main left landing gear door. Technicians inspected sensor gap and replaced proximity detector."
+    id: "sample-4",
+    label: "Sample 4 — Flight Control Issue",
+    shortLabel: "Flight Control Resistance",
+    text: "During scheduled flight-control inspection, increased resistance was observed during movement of the elevator control system. No visible damage was identified during the initial external inspection. Further inspection requested to determine whether the condition is associated with the control linkage, cable system, actuator, or lubrication condition.",
+    aircraftModel: "B787",
+    aircraftReg: "DEMO-VT412",
+    ataChapter: "ATA 27",
+    reportType: "Scheduled Maintenance",
+    expectedConcepts: [
+      "Flight controls",
+      "Elevator",
+      "Control linkage",
+      "Cable",
+      "Actuator",
+      "ATA 27"
+    ]
+  },
+  {
+    id: "sample-5",
+    label: "Sample 5 — Avionics Fault",
+    shortLabel: "Avionics VHF Fault",
+    text: "During avionics operational testing, intermittent communication loss was observed between the aircraft communication control panel and the VHF communication system. The fault occurred intermittently during repeated radio transmission tests. Connector and wiring inspection requested before replacement of any line-replaceable unit.",
+    aircraftModel: "A350",
+    aircraftReg: "DEMO-VT601",
+    ataChapter: "ATA 23",
+    reportType: "Line Maintenance",
+    expectedConcepts: [
+      "Avionics",
+      "VHF communication",
+      "Communication control panel",
+      "Wiring/connectors",
+      "ATA 23"
+    ]
+  },
+  {
+    id: "sample-6",
+    label: "Sample 6 — Corrosion Inspection",
+    shortLabel: "Corrosion Inspection",
+    text: "During scheduled inspection of the lower fuselage area, localized surface corrosion was identified near an access panel. The affected area was cleaned and visually inspected. Further assessment is required to determine corrosion depth and whether additional inspection or corrective maintenance is necessary.",
+    aircraftModel: "A320",
+    aircraftReg: "DEMO-VT711",
+    ataChapter: "ATA 51",
+    reportType: "Scheduled Maintenance",
+    expectedConcepts: [
+      "Corrosion",
+      "Fuselage",
+      "Inspection",
+      "Surface condition",
+      "ATA 51"
+    ]
   }
 ];
+

@@ -1,0 +1,16 @@
+# AIRCRAFT AVIONICS & VHF COMMUNICATION SYSTEM MANUAL
+DOCUMENT TYPE: Component & Aircraft Maintenance Manual (AMM/CMM)
+SYSTEM: Avionics & Communications (ATA 23)
+
+SECTION 1: VHF COMMUNICATION SYSTEM INTERMITTENT FAULTS
+1. If intermittent communication loss occurs between the Audio Control Panel (ACP) and VHF transceiver:
+- Inspect electrical connectors, wiring harness pin retention, and coaxial cable shield grounding per AMM Chapter 23-10-00.
+- Perform visual check of VHF antenna mounting base for corrosion, sealant degradation, or loose mounting hardware.
+- Test Audio Control Panel (ACP) push-to-talk (PTT) switch continuity and audio transformer output signals.
+- Check VHF transceiver line-replaceable unit (LRU) rack seating, pin engagement, and internal BITE error log entries.
+- Perform radio transmission quality and VSWR (Voltage Standing Wave Ratio) test across active VHF frequency bands before LRU replacement.
+
+SECTION 2: AUDIO CONTROL PANEL & WIRING HARNESS INTEGRITY
+2. Connector and harness inspection before LRU swapping:
+- Perform pin-to-pin wiring resistance and insulation isolation tests on communication control harnesses.
+- Verify ground bus connection resistance does not exceed 2.5 milliohms.

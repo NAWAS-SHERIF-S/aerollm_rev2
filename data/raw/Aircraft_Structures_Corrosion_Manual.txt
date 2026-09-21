@@ -1,0 +1,17 @@
+# AIRCRAFT STRUCTURES & CORROSION CONTROL MANUAL
+DOCUMENT TYPE: Structural Repair Manual (SRM) / AMM
+SYSTEM: Standard Structures & Surface Protection (ATA 51 / ATA 20)
+
+SECTION 1: FUSELAGE SURFACE CORROSION CLEANING & DEPTH ASSESSMENT
+1. If localized surface corrosion is identified on fuselage aluminum skin or structural panel areas:
+- Clean affected area thoroughly using approved solvent cleaning agents and non-metallic abrasive pads per SRM Chapter 51-20-00.
+- Perform detailed visual and optical depth measurement (using depth micrometer or ultrasonic thickness gauge) to quantify metal loss.
+- Compare corrosion depth against allowable structural damage limits published in the Structural Repair Manual (SRM).
+- Remove surface oxidation completely using fine aluminum oxide abrasives without exceeding structural skin thickness tolerances.
+- Apply chemical conversion coating (Alodine / Chromate treatment) followed by epoxy primer and approved topcoat system.
+- Schedule follow-up non-destructive inspection (NDI) or eddy current testing if corrosion depth exceeds minor surface thresholds.
+
+SECTION 2: FASTENER AND ACCESS PANEL CORROSION CONTROL
+2. Corrosion treatment near access panel fasteners:
+- Inspect fastener countersinks and surrounding structural skin for galvanic corrosion or moisture entrapment.
+- Re-seal access panel perimeters with approved polysulfide structural sealant before flight authorization.

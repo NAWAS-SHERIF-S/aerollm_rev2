@@ -210,6 +210,35 @@ body {
   box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.6), 0 6px 20px rgba(56, 189, 248, 0.35);
 }
 
+/* The maintenance workstation uses light glass panels, so its controls need
+   an explicit dark inactive state instead of inheriting the global HUD style. */
+.try-workstation .btn-liquid-chip,
+.try-workstation .btn-liquid-chip * {
+  color: #0f172a !important;
+}
+
+.try-workstation .btn-liquid-secondary,
+.try-workstation .btn-liquid-secondary * {
+  color: #075985 !important;
+}
+
+.try-workstation .result-view-toggle.is-active,
+.try-workstation .result-view-toggle.is-active * {
+  color: #ffffff !important;
+}
+
+.try-workstation .text-slate-500 {
+  color: #475569 !important;
+}
+
+.try-workstation .text-slate-600 {
+  color: #334155 !important;
+}
+
+.try-workstation .text-slate-700 {
+  color: #1e293b !important;
+}
+
 /* Liquid Glass Icon Button (Search, Refresh, Close) */
 .btn-liquid-icon {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);

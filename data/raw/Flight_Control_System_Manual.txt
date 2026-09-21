@@ -1,0 +1,16 @@
+# AIRCRAFT FLIGHT CONTROL SYSTEM MAINTENANCE MANUAL
+DOCUMENT TYPE: Aircraft Maintenance Manual (AMM)
+SYSTEM: Flight Controls (ATA 27)
+
+SECTION 1: ELEVATOR CONTROL SYSTEM RESISTANCE & LINKAGE INSPECTION
+1. If increased resistance or mechanical binding is observed during movement of the elevator control system:
+- Inspect elevator control linkages, bellcranks, control cable tension, and pulley assemblies per AMM Chapter 27-30-00.
+- Check elevator hydraulic power control unit (PCU) actuator seals, input rod bearings, and servo valve freedom of movement.
+- Verify flight control surface hinge pin lubrication condition and check for corrosion or debris at travel stops.
+- Perform control system rigging check and cable tension measurement using calibrated tensiometers.
+- Conduct full flight control travel range check (full nose-up to full nose-down) and verify cockpit control column deflection.
+
+SECTION 2: FLIGHT CONTROL ACTUATORS & TRIM TAB SYSTEMS
+2. Control actuator and elevator trim maintenance:
+- Inspect elevator trim tab actuator motor, position transmitter, and mechanical flex drive shafts.
+- Perform operational ground test of primary and secondary flight control systems prior to flight authorization.
